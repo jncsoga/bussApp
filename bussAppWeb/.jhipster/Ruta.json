@@ -1,0 +1,24 @@
+{
+    "name": "Ruta",
+    "fields": [
+        {
+            "fieldName": "lugaresDisponibles",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "inicio",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200306083500",
+    "entityTableName": "ruta",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

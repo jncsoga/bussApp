@@ -1,0 +1,24 @@
+{
+  "bussAppWebApp": {
+    "estacion": {
+      "home": {
+        "title": "Estacions",
+        "createLabel": "Create a new Estacion",
+        "createOrEditLabel": "Create or edit a Estacion",
+        "search": "Search for Estacion",
+        "notFound": "No Estacions found"
+      },
+      "created": "A new Estacion is created with identifier {{ param }}",
+      "updated": "A Estacion is updated with identifier {{ param }}",
+      "deleted": "A Estacion is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Estacion {{ id }}?"
+      },
+      "detail": {
+        "title": "Estacion"
+      },
+      "geolocalizacion": "Geolocalizacion",
+      "nombre": "Nombre"
+    }
+  }
+}

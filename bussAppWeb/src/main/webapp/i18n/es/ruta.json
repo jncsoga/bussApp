@@ -1,0 +1,24 @@
+{
+  "bussAppWebApp": {
+    "ruta": {
+      "home": {
+        "title": "Rutas",
+        "createLabel": "Crear nuevo Ruta",
+        "createOrEditLabel": "Crear o editar Ruta",
+        "search": "Buscar Ruta",
+        "notFound": "Ningún Rutas encontrado"
+      },
+      "created": "Un nuevo Ruta ha sido creado con el identificador {{ param }}",
+      "updated": "Un Ruta ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Ruta ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Ruta {{ id }}?"
+      },
+      "detail": {
+        "title": "Ruta"
+      },
+      "lugaresDisponibles": "Lugares Disponibles",
+      "inicio": "Inicio"
+    }
+  }
+}

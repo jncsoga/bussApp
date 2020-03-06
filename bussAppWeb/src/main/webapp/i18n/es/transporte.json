@@ -1,0 +1,27 @@
+{
+  "bussAppWebApp": {
+    "transporte": {
+      "home": {
+        "title": "Transportes",
+        "createLabel": "Crear nuevo Transporte",
+        "createOrEditLabel": "Crear o editar Transporte",
+        "search": "Buscar Transporte",
+        "notFound": "Ningún Transportes encontrado"
+      },
+      "created": "Un nuevo Transporte ha sido creado con el identificador {{ param }}",
+      "updated": "Un Transporte ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Transporte ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Transporte {{ id }}?"
+      },
+      "detail": {
+        "title": "Transporte"
+      },
+      "lugares": "Lugares",
+      "marca": "Marca",
+      "subMarca": "Sub Marca",
+      "noSerie": "No Serie",
+      "placas": "Placas"
+    }
+  }
+}

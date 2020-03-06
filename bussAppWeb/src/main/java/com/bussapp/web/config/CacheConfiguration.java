@@ -42,6 +42,12 @@ public class CacheConfiguration {
             createCache(cm, com.bussapp.web.domain.User.class.getName());
             createCache(cm, com.bussapp.web.domain.Authority.class.getName());
             createCache(cm, com.bussapp.web.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.bussapp.web.domain.Transporte.class.getName());
+            createCache(cm, com.bussapp.web.domain.Estacion.class.getName());
+            createCache(cm, com.bussapp.web.domain.Chofer.class.getName());
+            createCache(cm, com.bussapp.web.domain.Ruta.class.getName());
+            createCache(cm, com.bussapp.web.domain.Cliente.class.getName());
+            createCache(cm, com.bussapp.web.domain.Servicio.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

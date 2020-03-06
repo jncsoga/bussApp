@@ -16,6 +16,12 @@ application-dev.xml
 application.prod.xml
 ```
 
+Ejecutar entidades
+
+```
+jhipster import-jdl bussApp.jdl
+```
+
 Compilar app
 
 ```
