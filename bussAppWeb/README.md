@@ -1,5 +1,39 @@
 # bussAppWeb
 
+Crear usuario
+
+```
+ user: bussAppWeb
+ pass: rootmaster
+ database: bussAppWeb
+```
+
+Actualizar credenciales en:
+
+```
+pom.xml
+application-dev.xml
+application.prod.xml
+```
+
+Compilar app
+
+```
+mvn liquibase:dropAll
+mvn clean install -Dmaven.test.skip=true
+mvn liquibase:update
+```
+
+Comando para correr la app
+
+```
+npm start
+
+o
+
+mvnw
+```
+
 This application was generated using JHipster 6.7.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.7.1](https://www.jhipster.tech/documentation-archive/v6.7.1).
 
 ## Development

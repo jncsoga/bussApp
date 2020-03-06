@@ -10,3 +10,10 @@ Repositorio de trabajo para buss App
 Comando para correr la app
 
 ``npm start ``
+
+Crear usuario
+````
+ user: bussAppWeb
+ pass: rootmaster
+ database: bussAppWeb
+````
