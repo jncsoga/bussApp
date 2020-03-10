@@ -1,0 +1,36 @@
+{
+    "name": "Transporte",
+    "fields": [
+        {
+            "fieldName": "lugares",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "marca",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subMarca",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "noSerie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "placas",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200310061300",
+    "entityTableName": "transporte",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

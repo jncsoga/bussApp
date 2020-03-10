@@ -39,6 +39,8 @@ npm start
 o
 
 mvnw
+
+sh mvnw
 ```
 
 # Configuraciones en Ubuntu

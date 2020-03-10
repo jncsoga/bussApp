@@ -6,7 +6,7 @@
     <groupId>com.bussapp.web</groupId>
     <artifactId>buss-app-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>Buss App Web</name>
 
     <repositories>
