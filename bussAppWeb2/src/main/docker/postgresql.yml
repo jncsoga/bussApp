@@ -1,0 +1,11 @@
+version: '2'
+services:
+  bussappweb2-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/bussAppWeb2/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=bussAppWeb2
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432

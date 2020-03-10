@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.bussapp.web"
+    },
+    "jhipsterVersion": "6.7.1",
+    "applicationType": "monolith",
+    "baseName": "bussAppWeb2",
+    "packageName": "com.bussapp.web",
+    "packageFolder": "com/bussapp/web",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MWUyZmJiMzhkNWY1NDRlZjliNWY3NGZkNGZjMGNlMDY0OGIzMjg2NzE5YjE3ZDJmNjczNzAwMjYzYmYzOGZkNTcxMmM1NWY1OTIwNmFlNjkyMDMwMmU5MTZmMDExOTZlZDUyZmU5NjJiMWQwNWRkYjU1YmNkZDlhNDM5MjE2MDY=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "materia",
+    "clientThemeVariant": "dark",
+    "creationTimestamp": 1583820365400,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
