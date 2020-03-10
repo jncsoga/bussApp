@@ -91,6 +91,7 @@ Change the password of postgres role
 Crear usuario para la app
 
 ```
+CREATE USER ba_user WITH password 'rootmaster';
 CREATE USER bussAppWeb WITH PASSWORD 'rootmaster';
 CREATE DATABASE bussAppWeb;
 GRANT ALL PRIVILEGES ON DATABASE bussAppWeb to bussAppWeb;
