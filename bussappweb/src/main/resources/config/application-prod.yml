@@ -34,8 +34,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/bussappweb
-    username: bussappweb
-    password:
+    username: postgres
+    password: rootmaster
     hikari:
       poolName: Hikari
       auto-commit: false

@@ -1,0 +1,4 @@
+<module>
+    <web> </web>
+    <context-root>buss-app-web</context-root>
+</module>
