@@ -3,9 +3,9 @@
 Crear usuario
 
 ```
- user: bussAppWeb
+ user: postgres
  pass: rootmaster
- database: bussAppWeb
+ database: bussappweb
 ```
 
 Actualizar credenciales en:
@@ -76,6 +76,17 @@ export PATH=${M2_HOME}/bin:${PATH}
 
 Instalar Postgres
 
+```
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -sc)-pgdg main" > /etc/apt/sources.list.d/PostgreSQL.list'
+sudo apt update
+sudo apt-get install postgresql-10
+sudo systemctl stop postgresql.service
+sudo systemctl start postgresql.service
+sudo systemctl enable postgresql.service
+sudo systemctl status postgresql.service
+```
+
 Después de instalar conectarte con
 
 ```
@@ -85,15 +96,16 @@ sudo su - postgres
 Change the password of postgres role
 
 ```
+psql
 \password postgres
 ```
 
 Crear usuario para la app
 
 ```
-CREATE USER ba_user WITH password 'rootmaster';
+CREATE USER bauser WITH password 'rootmaster';
 CREATE USER bussAppWeb WITH PASSWORD 'rootmaster';
-CREATE DATABASE bussAppWeb;
+CREATE DATABASE bussappweb;
 GRANT ALL PRIVILEGES ON DATABASE bussAppWeb to bussAppWeb;
 ```
 
