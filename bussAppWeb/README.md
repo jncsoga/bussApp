@@ -28,6 +28,7 @@ Compilar app
 mvn liquibase:dropAll
 mvn clean install -Dmaven.test.skip=true
 mvn liquibase:update
+
 ```
 
 Comando para correr la app
@@ -38,6 +39,61 @@ npm start
 o
 
 mvnw
+```
+
+# Configuraciones en Ubuntu
+
+Instalar Java, por default open jdk11
+
+```
+sudo apt update
+sudo apt install default-jdk
+java -version
+```
+
+Salida esperada /usr/lib/jvm/default-java
+
+```
+openjdk version "11.0.6" 2020-01-14
+OpenJDK Runtime Environment (build 11.0.6+10-post-Ubuntu-1ubuntu118.04.1)
+OpenJDK 64-Bit Server VM (build 11.0.6+10-post-Ubuntu-1ubuntu118.04.1, mixed mode, sharing)
+```
+
+Instalar Maven (/home/ubuntu/instalaciones/apache-maven-3.6.1)
+
+```
+sudo wget https://archive.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
+sudo tar -xvzf apache-maven-3.6.1-bin.tar.gz
+```
+
+Modificar bashrc
+
+```
+export JAVA_HOME=/usr/lib/jvm/default-java
+export M2_HOME=/home/ubuntu/instalaciones/apache-maven-3.6.1
+export PATH=${M2_HOME}/bin:${PATH}
+```
+
+Instalar Postgres
+
+Después de instalar conectarte con
+
+```
+sudo su - postgres
+```
+
+Change the password of postgres role
+
+```
+\password postgres
+```
+
+Crear usuario para la app
+
+```
+CREATE USER bussAppWeb WITH PASSWORD 'rootmaster';
+CREATE DATABASE bussAppWeb;
+GRANT ALL PRIVILEGES ON DATABASE bussAppWeb to bussAppWeb;
 ```
 
 This application was generated using JHipster 6.7.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.7.1](https://www.jhipster.tech/documentation-archive/v6.7.1).
