@@ -77,8 +77,6 @@ export PATH=${M2_HOME}/bin:${PATH}
 Instalar Postgres
 
 ```
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -sc)-pgdg main" > /etc/apt/sources.list.d/PostgreSQL.list'
 sudo apt update
 sudo apt-get install postgresql-10
 sudo systemctl stop postgresql.service
