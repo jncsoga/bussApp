@@ -1,4 +1,0 @@
-# Cordova Init
-
-
-
