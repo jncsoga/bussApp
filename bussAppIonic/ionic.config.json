@@ -1,7 +1,0 @@
-{
-  "name": "bussAppIonic",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}
