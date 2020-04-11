@@ -5,6 +5,7 @@ import com.bussapp.web.repository.UserRepository;
 import com.bussapp.web.security.SecurityUtils;
 import com.bussapp.web.service.MailService;
 import com.bussapp.web.service.UserService;
+import com.bussapp.web.service.dto.JncDTO;
 import com.bussapp.web.service.dto.PasswordChangeDTO;
 import com.bussapp.web.service.dto.UserDTO;
 import com.bussapp.web.web.rest.errors.*;
@@ -104,6 +105,18 @@ public class AccountResource {
         return userService.getUserWithAuthorities()
             .map(UserDTO::new)
             .orElseThrow(() -> new AccountResourceException("User could not be found"));
+    }
+
+    @GetMapping("/jnc")
+    public JncDTO getJnc() {
+        JncDTO jncDTO = new JncDTO();
+        jncDTO.setTexto("Hola JUan");
+        return jncDTO;
+    }
+
+    @PostMapping("/jnc")
+    public void postJnc(@Valid @RequestBody JncDTO jncDTO) {
+        log.info("############" + jncDTO.getTexto());
     }
 
     /**
