@@ -5,6 +5,7 @@ import { User } from '../models/user';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Jnc} from '../models/Jnc';
+import {error} from 'util';
 
 
 @Injectable({
@@ -15,6 +16,11 @@ export class AuthService {
     token: any;
     postId: string;
     user: User;
+
+    async saveUser(data) {
+        console.log(data);
+        this.env.user = data;
+    }
 
     constructor(
         private http: HttpClient,
@@ -27,12 +33,12 @@ export class AuthService {
         const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'
             ,'Authorization':'Basic ' + btoa(user + ":" + password) });
         console.log(headers);
-        await this.http.get<any>(this.env.API_URL + "api/account", {headers: headers}).subscribe({
-            next: data => this.user = data,
-            error: error => console.error('Error', error)
+        return await this.http.get<any>(this.env.API_URL + "api/account", {headers: headers}).toPromise().then(data => {
+            return data;
+        }).catch(error => {
+            console.log(error);
+            return new User();
         });
-        console.log(this.user);
-        this.env.user = this.user;
      }
 
 

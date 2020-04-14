@@ -33,11 +33,18 @@ export class AuthenticationService {
 
   async login(credential: Credential) {
     // await, para que espere a que responda el método y no lo haga asincrono, necesota que el metodo sea declarado como async
-    await this.auth.login(credential.username, credential.password);
-    if (this.env.user.activated) {
+    const user = await this.auth.login(credential.username, credential.password);
+    if (user.activated) {
       console.log("corrrecto");
       return this.authenticationState.next(true);
     }
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: 'Datos incorrectos.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
     console.log("incorrecto");
     this.authenticationState.next(false);
   }
