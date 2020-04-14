@@ -1,5 +1,7 @@
 {
   "name": "bussionicmovil",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
