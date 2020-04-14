@@ -1,9 +1,10 @@
 export class User {
     id: number;
-    fistName: string;
-    lastNme: string;
+    firstName: string;
+    lastName: string;
     email: string;
-    imageURL: string;
     activated: boolean;
     authorities: string[];
+    constructor() {
+    }
 }

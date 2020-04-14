@@ -6,6 +6,7 @@ import {EnvService} from './env.service';
 import {Credential} from '../models/Credential';
 import { AlertController} from '@ionic/angular';
 import {ApiAccountService} from './apiAccount.service';
+import {User} from '../models/User';
 
 const TOKEN_KEY = 'auth-token';
 
@@ -34,6 +35,7 @@ export class AuthenticationService {
   async login(credential: Credential) {
     // await, para que espere a que responda el método y no lo haga asincrono, necesota que el metodo sea declarado como async
     const user = await this.apiAccount.login(credential.username, credential.password);
+    console.log(user);
     if (user.activated) {
       console.log("corrrecto");
       this.env.user = user;

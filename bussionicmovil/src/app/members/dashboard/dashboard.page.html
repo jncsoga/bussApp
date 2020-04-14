@@ -5,10 +5,17 @@
         <ion-icon slot="icon-only" name="log-out"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>dashboard</ion-title>
+    <ion-title>Usuario: {{envService.user.firstName}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <div text-center>
+        <ion-card-title>{{envService.user.firstName}}</ion-card-title>
+      </div>
 
+    </ion-card-header>
+  </ion-card>
 </ion-content>
