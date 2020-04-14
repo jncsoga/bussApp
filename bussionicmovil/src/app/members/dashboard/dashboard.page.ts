@@ -12,6 +12,7 @@ export class DashboardPage implements OnInit {
   constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
+
   }
 
   logout() {

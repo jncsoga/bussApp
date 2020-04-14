@@ -5,7 +5,7 @@ import { Platform } from '@ionic/angular';
 import {EnvService} from './env.service';
 import {Credential} from '../models/Credential';
 import { AlertController} from '@ionic/angular';
-import {ApiService} from './api.service';
+import {ApiAccountService} from './apiAccount.service';
 
 const TOKEN_KEY = 'auth-token';
 
@@ -16,7 +16,7 @@ export class AuthenticationService {
 
   authenticationState = new BehaviorSubject(false);
 
-  constructor(private storage: Storage, private plt: Platform, private api: ApiService,
+  constructor(private storage: Storage, private plt: Platform, private apiAccount: ApiAccountService,
               private env: EnvService, public alertController: AlertController) {
     this.plt.ready().then(() => {
       this.checkToken();
@@ -33,7 +33,7 @@ export class AuthenticationService {
 
   async login(credential: Credential) {
     // await, para que espere a que responda el método y no lo haga asincrono, necesota que el metodo sea declarado como async
-    const user = await this.api.login(credential.username, credential.password);
+    const user = await this.apiAccount.login(credential.username, credential.password);
     if (user.activated) {
       console.log("corrrecto");
       this.env.user = user;

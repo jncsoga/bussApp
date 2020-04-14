@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
-import { ApiService } from './services/api.service';
 import { Router } from '@angular/router';
 
 import { Platform } from '@ionic/angular';
@@ -18,8 +17,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private authenticationService: AuthenticationService,
-    private router: Router,
-    private authService: ApiService
+    private router: Router
   ) {
     this.initializeApp();
   }

@@ -2,16 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EnvService } from './env.service';
 import { User } from '../models/user';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
-import { catchError, map, tap } from 'rxjs/operators';
-import { Jnc} from '../models/Jnc';
-import {error} from 'util';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class ApiAccountService {
     constructor(
         private http: HttpClient,
         private env: EnvService
