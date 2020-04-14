@@ -107,11 +107,11 @@ public class AccountResource {
             .orElseThrow(() -> new AccountResourceException("User could not be found"));
     }
 
-    @GetMapping("/jnc")
-    public JncDTO getJnc() {
-        JncDTO jncDTO = new JncDTO();
-        jncDTO.setTexto("Hola JUan");
-        return jncDTO;
+    @GetMapping("/accountMovil")
+    public UserDTO getJnc() {
+        return userService.getUserWithAuthorities()
+            .map(UserDTO::new)
+            .orElseThrow(() -> new AccountResourceException("User could not be found"));
     }
 
     @PostMapping("/jnc")

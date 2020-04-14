@@ -3,6 +3,9 @@ import { Storage } from '@ionic/storage';
 import { BehaviorSubject } from 'rxjs';
 import { Platform } from '@ionic/angular';
 import { AuthService} from './auth.service';
+import {EnvService} from './env.service';
+import {Credential} from '../models/Credential';
+import { AlertController} from '@ionic/angular';
 
 const TOKEN_KEY = 'auth-token';
 
@@ -13,7 +16,8 @@ export class AuthenticationService {
 
   authenticationState = new BehaviorSubject(false);
 
-  constructor(private storage: Storage, private plt: Platform, private auth: AuthService) {
+  constructor(private storage: Storage, private plt: Platform, private auth: AuthService,
+              private env: EnvService, public alertController: AlertController) {
     this.plt.ready().then(() => {
       this.checkToken();
     });
@@ -27,12 +31,15 @@ export class AuthenticationService {
     });
   }
 
-  login() {
-    console.log("login");
-    this.auth.login("admin", "admin");
-    return this.storage.set(TOKEN_KEY, 'Bearer 1234567').then(() => {
-      this.authenticationState.next(true);
-    });
+  async login(credential: Credential) {
+    // await, para que espere a que responda el método y no lo haga asincrono, necesota que el metodo sea declarado como async
+    await this.auth.login(credential.username, credential.password);
+    if (this.env.user.activated) {
+      console.log("corrrecto");
+      return this.authenticationState.next(true);
+    }
+    console.log("incorrecto");
+    this.authenticationState.next(false);
   }
 
   logout() {

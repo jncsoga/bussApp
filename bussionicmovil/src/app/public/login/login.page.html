@@ -1,10 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="login()" expand="block">Login</ion-button>
+  <ion-card>
+    <ion-card-header>
+      <div text-center>
+        <ion-card-title>Acceso</ion-card-title>
+      </div>
+
+    </ion-card-header>
+    <ion-card-content>
+      <form #form="ngForm" (ngSubmit)="login(form)">
+        <div padding>
+          <ion-item>
+            <ion-input name="username" type="text" placeholder="Usuario" [(ngModel)]="credential.username" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="password" type="password" placeholder="Contraseña" [(ngModel)]="credential.password" required></ion-input>
+          </ion-item>
+          <ion-button size="small" (click)="login()" expand="block">Login</ion-button>
+        </div>
+
+      </form>
+    </ion-card-content>
+
+  </ion-card>
+
+
   <ion-button expand="block" color="secondary" routerLink="/register" routerDirection="forward"> </ion-button>
 </ion-content>

@@ -14,30 +14,25 @@ export class AuthService {
     isLoggedIn = false;
     token: any;
     postId: string;
-    jnc: Jnc;
+    user: User;
 
     constructor(
         private http: HttpClient,
         private env: EnvService
     ) { }
 
-     login(user: string, password: string) {
+     async login(user: string, password: string) {
         console.log(user + ":" + password);
         console.log(btoa(user + ":" + password));
-        const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8','Authorization':'Basic YWRtaW46YWRtaW4='});
-         const body = JSON.stringify({username: user,
-             password: password});
+        const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'
+            ,'Authorization':'Basic ' + btoa(user + ":" + password) });
         console.log(headers);
-        this.http.get<any>(this.env.API_URL + "api/jnc", {headers: headers}).subscribe({
-            next: data => this.jnc = data,
+        await this.http.get<any>(this.env.API_URL + "api/account", {headers: headers}).subscribe({
+            next: data => this.user = data,
             error: error => console.error('Error', error)
         });
-        console.log(this.jnc);
-
-        this.http.post<any>(this.env.API_URL + "api/jnc", this.jnc, {headers: headers}).subscribe({
-            next: data => this.jnc = data,
-            error: error => console.error('Error', error)
-        });
+        console.log(this.user);
+        this.env.user = this.user;
      }
 
 
