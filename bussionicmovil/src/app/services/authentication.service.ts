@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { BehaviorSubject } from 'rxjs';
 import { Platform } from '@ionic/angular';
-import { AuthService} from './auth.service';
 import {EnvService} from './env.service';
 import {Credential} from '../models/Credential';
 import { AlertController} from '@ionic/angular';
+import {ApiService} from './api.service';
 
 const TOKEN_KEY = 'auth-token';
 
@@ -16,7 +16,7 @@ export class AuthenticationService {
 
   authenticationState = new BehaviorSubject(false);
 
-  constructor(private storage: Storage, private plt: Platform, private auth: AuthService,
+  constructor(private storage: Storage, private plt: Platform, private api: ApiService,
               private env: EnvService, public alertController: AlertController) {
     this.plt.ready().then(() => {
       this.checkToken();
@@ -33,9 +33,10 @@ export class AuthenticationService {
 
   async login(credential: Credential) {
     // await, para que espere a que responda el método y no lo haga asincrono, necesota que el metodo sea declarado como async
-    const user = await this.auth.login(credential.username, credential.password);
+    const user = await this.api.login(credential.username, credential.password);
     if (user.activated) {
       console.log("corrrecto");
+      this.env.user = user;
       return this.authenticationState.next(true);
     }
     const alert = await this.alertController.create({

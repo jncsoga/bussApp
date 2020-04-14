@@ -11,17 +11,7 @@ import {error} from 'util';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-    isLoggedIn = false;
-    token: any;
-    postId: string;
-    user: User;
-
-    async saveUser(data) {
-        console.log(data);
-        this.env.user = data;
-    }
-
+export class ApiService {
     constructor(
         private http: HttpClient,
         private env: EnvService

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
-import { AuthService } from './services/auth.service';
+import { ApiService } from './services/api.service';
 import { Router } from '@angular/router';
 
 import { Platform } from '@ionic/angular';
@@ -19,7 +19,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private authenticationService: AuthenticationService,
     private router: Router,
-    private authService: AuthService
+    private authService: ApiService
   ) {
     this.initializeApp();
   }
